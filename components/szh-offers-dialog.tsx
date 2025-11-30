@@ -14,13 +14,10 @@ export function SzhOffersDialog({ sites }: SzhOffersDialogProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   useEffect(() => {
-    const hasVisited = localStorage.getItem("hasVisitedBefore")
-
-    if (!hasVisited) {
+    {
       const timer = setTimeout(() => {
         setIsOpen(true)
-        localStorage.setItem("hasVisitedBefore", "true")
-      }, 3000)
+      }, 8000)
 
       return () => clearTimeout(timer)
     }
@@ -60,7 +57,7 @@ export function SzhOffersDialog({ sites }: SzhOffersDialogProps) {
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMSkiIHN0cm9rZS13aWR0aD0iMiIvPjwvZz48L3N2Zz4=')] opacity-20" />
 
           <div className="relative flex items-center justify-center gap-2 mb-3">
-            <Gift className="h-6 w-6 text-white" />
+            
             <DialogHeader>
               <DialogTitle className="text-center font-display text-3xl font-black text-white uppercase tracking-tight drop-shadow-md">
                 Ekskluzivna Ponuda
@@ -108,7 +105,7 @@ export function SzhOffersDialog({ sites }: SzhOffersDialogProps) {
             className="block w-full px-8 py-5 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white text-xl font-black text-center transition-all transform hover:scale-105 mb-4 uppercase tracking-wide shadow-lg"
             onClick={() => setIsOpen(false)}
           >
-            🎁 Preuzmi Bonus Sada
+            Preuzmi Bonus Sada
           </a>
 
           {/* Footer with Croatian flag colors accent */}
