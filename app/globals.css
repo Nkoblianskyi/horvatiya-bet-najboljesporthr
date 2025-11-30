@@ -1,0 +1,261 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Clean Sports Magazine Light Theme - Professional & Editorial */
+  --background: oklch(0.99 0 0);
+  --foreground: oklch(0.15 0 0);
+  --card: oklch(0.98 0 0);
+  --card-foreground: oklch(0.15 0 0);
+  --popover: oklch(0.99 0 0);
+  --popover-foreground: oklch(0.15 0 0);
+
+  /* Primary - Deep Forest Green for trust and sport */
+  --primary: oklch(0.35 0.1 160);
+  --primary-foreground: oklch(0.99 0 0);
+
+  /* Secondary - Warm Terracotta for accents */
+  --secondary: oklch(0.55 0.12 45);
+  --secondary-foreground: oklch(0.99 0 0);
+
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+
+  /* Accent - Steel Blue for highlights */
+  --accent: oklch(0.5 0.08 240);
+  --accent-foreground: oklch(0.99 0 0);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.92 0 0);
+  --ring: oklch(0.35 0.1 160);
+  --chart-1: oklch(0.35 0.1 160);
+  --chart-2: oklch(0.55 0.12 45);
+  --chart-3: oklch(0.5 0.08 240);
+  --chart-4: oklch(0.45 0.15 140);
+  --chart-5: oklch(0.5 0.1 245);
+  --radius: 0rem;
+  --sidebar: oklch(0.99 0 0);
+  --sidebar-foreground: oklch(0.15 0 0);
+  --sidebar-primary: oklch(0.35 0.1 160);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.97 0 0);
+  --sidebar-accent-foreground: oklch(0.15 0 0);
+  --sidebar-border: oklch(0.92 0 0);
+  --sidebar-ring: oklch(0.35 0.1 160);
+
+  /* Sports Magazine Editorial Colors */
+  --mag-white: oklch(0.99 0 0);
+  --mag-cream: oklch(0.97 0.01 90);
+  --mag-black: oklch(0.15 0 0);
+  --mag-charcoal: oklch(0.25 0 0);
+  --mag-green: oklch(0.35 0.1 160);
+  --mag-green-light: oklch(0.45 0.08 160);
+  --mag-terracotta: oklch(0.55 0.12 45);
+  --mag-steel: oklch(0.5 0.08 240);
+  --mag-grey: oklch(0.55 0 0);
+  --mag-grey-light: oklch(0.75 0 0);
+  --mag-border: oklch(0.92 0 0);
+  --mag-surface: oklch(0.97 0 0);
+}
+
+.dark {
+  --background: oklch(0.12 0 0);
+  --foreground: oklch(0.99 0 0);
+  --card: oklch(0.15 0 0);
+  --card-foreground: oklch(0.99 0 0);
+  --popover: oklch(0.15 0 0);
+  --popover-foreground: oklch(0.99 0 0);
+  --primary: oklch(0.45 0.1 160);
+  --primary-foreground: oklch(0.05 0 0);
+  --secondary: oklch(0.55 0.12 45);
+  --secondary-foreground: oklch(0.99 0 0);
+  --muted: oklch(0.25 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.5 0.08 240);
+  --accent-foreground: oklch(0.05 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.25 0 0);
+  --input: oklch(0.25 0 0);
+  --ring: oklch(0.45 0.1 160);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Magazine color mappings */
+  --color-mag-white: var(--mag-white);
+  --color-mag-cream: var(--mag-cream);
+  --color-mag-black: var(--mag-black);
+  --color-mag-charcoal: var(--mag-charcoal);
+  --color-mag-green: var(--mag-green);
+  --color-mag-green-light: var(--mag-green-light);
+  --color-mag-terracotta: var(--mag-terracotta);
+  --color-mag-steel: var(--mag-steel);
+  --color-mag-grey: var(--mag-grey);
+  --color-mag-grey-light: var(--mag-grey-light);
+  --color-mag-border: var(--mag-border);
+  --color-mag-surface: var(--mag-surface);
+
+  /* Editorial fonts */
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-mag-white text-mag-black;
+    font-feature-settings: "liga" 1, "calt" 1;
+  }
+}
+
+/* Magazine Color Utilities */
+.bg-mag-white {
+  background-color: var(--mag-white);
+}
+.bg-mag-cream {
+  background-color: var(--mag-cream);
+}
+.bg-mag-black {
+  background-color: var(--mag-black);
+}
+.bg-mag-charcoal {
+  background-color: var(--mag-charcoal);
+}
+.bg-mag-green {
+  background-color: var(--mag-green);
+}
+.bg-mag-green-light {
+  background-color: var(--mag-green-light);
+}
+.bg-mag-terracotta {
+  background-color: var(--mag-terracotta);
+}
+.bg-mag-steel {
+  background-color: var(--mag-steel);
+}
+.bg-mag-grey {
+  background-color: var(--mag-grey);
+}
+.bg-mag-grey-light {
+  background-color: var(--mag-grey-light);
+}
+.bg-mag-surface {
+  background-color: var(--mag-surface);
+}
+.bg-mag-border {
+  background-color: var(--mag-border);
+}
+
+.text-mag-white {
+  color: var(--mag-white);
+}
+.text-mag-cream {
+  color: var(--mag-cream);
+}
+.text-mag-black {
+  color: var(--mag-black);
+}
+.text-mag-charcoal {
+  color: var(--mag-charcoal);
+}
+.text-mag-green {
+  color: var(--mag-green);
+}
+.text-mag-green-light {
+  color: var(--mag-green-light);
+}
+.text-mag-terracotta {
+  color: var(--mag-terracotta);
+}
+.text-mag-steel {
+  color: var(--mag-steel);
+}
+.text-mag-grey {
+  color: var(--mag-grey);
+}
+.text-mag-grey-light {
+  color: var(--mag-grey-light);
+}
+
+.border-mag-green {
+  border-color: var(--mag-green);
+}
+.border-mag-terracotta {
+  border-color: var(--mag-terracotta);
+}
+.border-mag-steel {
+  border-color: var(--mag-steel);
+}
+.border-mag-border {
+  border-color: var(--mag-border);
+}
+.border-mag-black {
+  border-color: var(--mag-black);
+}
+
+.hover\:bg-mag-green:hover {
+  background-color: var(--mag-green);
+}
+.hover\:bg-mag-charcoal:hover {
+  background-color: var(--mag-charcoal);
+}
+.hover\:text-mag-green:hover {
+  color: var(--mag-green);
+}
+.hover\:text-mag-terracotta:hover {
+  color: var(--mag-terracotta);
+}
+.hover\:border-mag-green:hover {
+  border-color: var(--mag-green);
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
